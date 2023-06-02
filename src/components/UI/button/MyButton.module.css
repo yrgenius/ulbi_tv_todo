@@ -1,0 +1,12 @@
+.btn{
+    padding: 7px 15px;
+    background: transparent;
+    border: 2px solid salmon;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.2;
+    height: fit-content;
+    align-self: center;
+}
