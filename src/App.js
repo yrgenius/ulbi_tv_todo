@@ -3,9 +3,9 @@ import PostList from './components/PostList.jsx';
 import PostForm from './components/PostForm.jsx';
 import PostFilter from './components/PostFilter.jsx';
 import MyModal from './components/UI/modal/MyModal.jsx';
+import MyButton from './components/UI/button/MyButton.jsx';
 import './styles/style.css';
 import './styles/input.css';
-import MyButton from './components/UI/button/MyButton.jsx';
 
 
 function App() {
