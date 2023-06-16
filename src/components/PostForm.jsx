@@ -5,9 +5,6 @@ import MyInput from './UI/input/MyInput.jsx';
 const PostForm = ({ create }) => {
 
     const [post, setPost] = useState({ title: '', body: '' });
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-    // const bodyInputRef = useRef();
 
     function addNewPost(e) {
         e.preventDefault();

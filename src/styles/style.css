@@ -1,17 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 16px;
 }
 
-#root{
+#root {
     margin: 0 auto;
     display: flex;
     justify-content: center;
 }
 
-.wrapper{
+.wrapper {
     margin-top: 30px;
     padding: 10px;
     border: 2px solid sienna;

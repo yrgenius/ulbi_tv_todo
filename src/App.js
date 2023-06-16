@@ -1,10 +1,11 @@
 import React, { useMemo, useRef, useState } from 'react';
 import PostList from './components/PostList.jsx';
 import PostForm from './components/PostForm.jsx';
-import NotFound from './components/NotFound.jsx';
 import PostFilter from './components/PostFilter.jsx';
+import MyModal from './components/UI/modal/MyModal.jsx';
 import './styles/style.css';
 import './styles/input.css';
+import MyButton from './components/UI/button/MyButton.jsx';
 
 
 function App() {
@@ -16,9 +17,11 @@ function App() {
     ]);
 
     const [filter, setFilter] = useState({ sort: '', query: '' });
+    const [modal, setModal] = useState(false);
 
     const createPost = (newPost) => {
         setPosts([...posts, newPost]);
+        setModal(false);
     }
 
     const removePost = (post) => {
@@ -39,7 +42,14 @@ function App() {
 
     return (
         <div className="App">
-            <PostForm create={createPost} />
+            <MyButton style={{ marginTop: '20px' }} onClick={() => setModal(true)}>
+                Создать пользователя
+            </MyButton>
+            <MyModal
+                visible={modal}
+                setVisible={setModal}>
+                <PostForm create={createPost} />
+            </MyModal>
             <hr style={{ margin: '15px 0' }} />
             <PostFilter
                 filter={filter}
