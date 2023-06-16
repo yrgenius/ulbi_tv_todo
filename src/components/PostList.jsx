@@ -1,7 +1,12 @@
 import React from 'react';
+import NotFound from './NotFound.jsx';
 import { PostItem } from './PostItem.jsx';
 
 const PostList = ({ posts, title, remove }) => {
+
+    if (!posts.length) {
+        return <NotFound />
+    }
 
     return (
         <div>
