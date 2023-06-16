@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import PostList from './components/PostList.jsx';
 import PostForm from './components/PostForm.jsx';
 import PostFilter from './components/PostFilter.jsx';
@@ -7,20 +8,23 @@ import MyButton from './components/UI/button/MyButton.jsx';
 import { usePosts } from './hooks/usePosts.js';
 import './styles/style.css';
 import './styles/input.css';
-import axios from 'axios';
 
 
 function App() {
 
     const [posts, setPosts] = useState([
-        { id: 1, title: 'JavaScript 1', body: 'Description' },
-        { id: 2, title: 'JavaScript 2', body: 'Description' },
-        { id: 3, title: 'JavaScript 3', body: 'Description' },
+        // { id: 1, title: 'JavaScript 1', body: 'Description' },
+        // { id: 2, title: 'JavaScript 2', body: 'Description' },
+        // { id: 3, title: 'JavaScript 3', body: 'Description' },
     ]);
 
     const [filter, setFilter] = useState({ sort: '', query: '' });
     const [modal, setModal] = useState(false);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+
+    useEffect(() => {
+        fetchPost();
+    }, [])
 
     async function fetchPost() {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
