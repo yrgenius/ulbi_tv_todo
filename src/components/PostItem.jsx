@@ -1,7 +1,7 @@
 import React from 'react';
 import MyButton from './UI/button/MyButton';
-import '../styles/post.css';
 import style from './UI/button/MyButton.module.css';
+import '../styles/post.css';
 
 const PostItem = (props) => {
 
