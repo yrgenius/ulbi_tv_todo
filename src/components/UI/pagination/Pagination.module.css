@@ -1,4 +1,4 @@
-.btn {
+.page {
     padding: 7px 15px;
     background: transparent;
     border: 2px solid salmon;
@@ -9,4 +9,10 @@
     line-height: 1.2;
     height: fit-content;
     align-self: center;
+}
+
+.page__current {
+    font-size: 27px;
+    border: 1px solid red;
+    font-weight: 700;
 }
